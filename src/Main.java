@@ -8,14 +8,34 @@ public class Main {
     public static void main(String[] args) throws IOException{
         ArrayList<Double> list = new ArrayList<>();
         list = readFile(list);
-        double CF, NCF;
+        ArrayList<Double> CF = new ArrayList<>();
+        ArrayList<Double> NCF = new ArrayList<>();
+        int T = -1;
         DecimalFormat df = new DecimalFormat("#.#####");
         df.setRoundingMode(RoundingMode.CEILING);
-        for(int i = 0; i < 15; i++){
-            CF = FirstPoint.correlationF(i, list);
-            NCF = FirstPoint.NCF(i, list);
-            System.out.println(i + ": CF " + df.format(CF) + " : NCF " + df.format(NCF));
+        ArrayList<Double> AR_CF = new ArrayList<>();
+        for(int i = 0; i < 11; i++){
+            CF.add(FirstPoint.correlationF(i, list));
+            NCF.add(FirstPoint.NCF(i, list));
+            if(i < 4){
+                AR_CF.add(CF.get(i));
+            }
         }
+       // ArrayList<Double> solveAR;
+        //solveAR = SecondPoint.solveAR(AR_CF, 2);
+      //  System.out.println(df.format(solveAR.get(0)) + " " + df.format(solveAR.get(1))+ " " + df.format(solveAR.get(2)));
+
+        double[] theoryNCF;
+        for(int i = 0; i <= 3; i++) {
+            theoryNCF = SecondPoint.theoryNCF(NCF, i);
+            //System.out.println(SecondPoint.epsAR(NCF, theoryNCF));
+            for(int j = 0; j < 11; j++) {
+                System.out.print(theoryNCF[j] + " ");
+            }
+            System.out.println();
+            System.out.println(SecondPoint.epsAR(NCF, theoryNCF));
+        }
+
     }
 
     public static ArrayList<Double> readFile(ArrayList<Double> list) throws IOException{
