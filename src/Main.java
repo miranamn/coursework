@@ -16,18 +16,18 @@ public class Main {
         ArrayList<Double> AR_CF = new ArrayList<>();
         for(int i = 0; i < 11; i++){
             CF.add(FirstPoint.correlationF(i, list));
-            NCF.add(FirstPoint.NCF(i, list));
-            if(i < 4){
-                AR_CF.add(CF.get(i));
-            }
+            NCF.add(FirstPoint.NCF(i, list)); //нкф исходного процесса
+            //  if(i < 4){
+               // AR_CF.add(CF.get(i));
+           // }
         }
        // ArrayList<Double> solveAR;
         //solveAR = SecondPoint.solveAR(AR_CF, 2);
       //  System.out.println(df.format(solveAR.get(0)) + " " + df.format(solveAR.get(1))+ " " + df.format(solveAR.get(2)));
 
-        double[] theoryNCF;
+      /*  double[] theoryNCF;
         for(int i = 0; i <= 3; i++) {
-            theoryNCF = SecondPoint.theoryNCF(NCF, i);
+            theoryNCF = SecondPoint.theoryNCF(NCF, i, 0);
             //System.out.println(SecondPoint.epsAR(NCF, theoryNCF));
             for(int j = 0; j < 11; j++) {
                 System.out.print(theoryNCF[j] + " ");
@@ -35,6 +35,8 @@ public class Main {
             System.out.println();
             System.out.println(SecondPoint.epsAR(NCF, theoryNCF));
         }
+        */
+        ThirdPoint.ARMA(NCF);
 
     }
 
