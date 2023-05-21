@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException{
         ArrayList<Double> list = new ArrayList<>();
         list = readFile(list);
+        System.out.println(FirstPoint.average(list));
         ArrayList<Double> CF = new ArrayList<>();
         ArrayList<Double> NCF = new ArrayList<>();
         int T = -1;
@@ -36,8 +37,10 @@ public class Main {
             System.out.println(SecondPoint.epsAR(NCF, theoryNCF));
         }
         */
-        ThirdPoint.ARMA(NCF);
-
+       // ThirdPoint.ARMA(NCF);
+        BestModels.AR2(98.55264);
+      //  BestModels.CC0(98.55264);
+       // BestModels.ARCC33(98.55264);
     }
 
     public static ArrayList<Double> readFile(ArrayList<Double> list) throws IOException{
