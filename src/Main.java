@@ -26,7 +26,7 @@ public class Main {
         //solveAR = SecondPoint.solveAR(AR_CF, 2);
       //  System.out.println(df.format(solveAR.get(0)) + " " + df.format(solveAR.get(1))+ " " + df.format(solveAR.get(2)));
 
-      /*  double[] theoryNCF;
+        double[] theoryNCF;
         for(int i = 0; i <= 3; i++) {
             theoryNCF = SecondPoint.theoryNCF(NCF, i, 0);
             //System.out.println(SecondPoint.epsAR(NCF, theoryNCF));
@@ -36,11 +36,11 @@ public class Main {
             System.out.println();
             System.out.println(SecondPoint.epsAR(NCF, theoryNCF));
         }
-        */
+
        // ThirdPoint.ARMA(NCF);
-        BestModels.AR2(98.55264);
-      //  BestModels.CC0(98.55264);
-       // BestModels.ARCC33(98.55264);
+         BestModels.AR2(98.55264);
+        BestModels.CC0(98.55264);
+        BestModels.ARCC33(98.55264);
     }
 
     public static ArrayList<Double> readFile(ArrayList<Double> list) throws IOException{

@@ -35,12 +35,14 @@ public class BestModels {
             for(int i = 0; i < 11; i ++){
                 NCF.add(FirstPoint.NCF(i, arr));
             }
+            System.out.println( "____TCF___- ");
             double[] TCF = ThirdPoint.theoryNCF(NCF, beta, 2,0);
             for(int i = 0; i < TCF.length; i ++){
                 System.out.println(TCF[i] + " ");
             }
-            System.out.println( "____________- ");
+            System.out.println( "____NCF___- ");
             for (double elem : NCF) System.out.println(elem + " ");
+            System.out.println( "___eps_____ " + SecondPoint.epsAR(NCF, TCF));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -76,12 +78,14 @@ public class BestModels {
             for(int i = 0; i < 11; i ++){
                 NCF.add(FirstPoint.NCF(i, arr));
             }
+            System.out.println( "_____TCF_____- ");
             double[] TCF = ThirdPoint.theoryNCF(NCF, beta, 0,0);
             for(int i = 0; i < TCF.length; i ++){
                 System.out.println(TCF[i] + " ");
             }
-            System.out.println( "____________- ");
+            System.out.println( "_____NCF_____- ");
             for (double elem : NCF) System.out.println(elem + " ");
+            System.out.println( "___eps_____ " + ThirdPoint.epsARMA(NCF, TCF));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -119,11 +123,9 @@ public class BestModels {
                 NCF.add(FirstPoint.NCF(i, arr));
             }
             double[] TCF = ThirdPoint.theoryNCF(NCF, beta, 3,3);
-            for(int i = 0; i < TCF.length; i ++){
-                System.out.println(TCF[i] + " ");
-            }
-            System.out.println( "____________- ");
+            System.out.println( "___NCF_____- ");
             for (double elem : NCF) System.out.println(elem + " ");
+            System.out.println( "___eps_____ " + ThirdPoint.epsARMA(NCF, TCF));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

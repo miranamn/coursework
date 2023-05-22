@@ -28,8 +28,8 @@ public class SecondPoint {
         }
         return params;
     }
-    public static double[] theoryNCF(ArrayList<Double> NCF, double[] beta, int M){
-       // double[] beta = {0.78209, 0, 0, 0.49272, 0.37, 0, 0.48347, 0.35767, 0.02501};
+    public static double[] theoryNCF(ArrayList<Double> NCF, int M, int N){
+        double[] beta = {0.78209, 0, 0, 0.49272, 0.37, 0, 0.48347, 0.35767, 0.02501};
         double[] theoryNCF = new double[11];
         double sum;
         for (int i = 0; i <= M; i++) theoryNCF[i] = NCF.get(i);
