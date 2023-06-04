@@ -30,6 +30,7 @@ public class Main {
         for(int i = 0; i <= 3; i++) {
             theoryNCF = SecondPoint.theoryNCF(NCF, i, 0);
             //System.out.println(SecondPoint.epsAR(NCF, theoryNCF));
+            System.out.println("ар" + i);
             for(int j = 0; j < 11; j++) {
                 System.out.print(theoryNCF[j] + " ");
             }
@@ -38,9 +39,9 @@ public class Main {
         }
 
        // ThirdPoint.ARMA(NCF);
-         BestModels.AR2(98.55264);
-        BestModels.CC0(98.55264);
-        BestModels.ARCC33(98.55264);
+          BestModels.AR3(98.55264);
+      //  BestModels.CC0(98.55264);
+      //  BestModels.ARCC33(98.55264);
     }
 
     public static ArrayList<Double> readFile(ArrayList<Double> list) throws IOException{

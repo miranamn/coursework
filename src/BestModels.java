@@ -6,20 +6,21 @@ import java.util.Random;
 import static java.lang.Math.sqrt;
 
 public class BestModels {
-    public static void AR2(double M){
-        System.out.println("_____________________МОДЕЛИРОВАНИЕ АР(2)_____________________");
+    public static void AR3(double M){
+        System.out.println("_____________________МОДЕЛИРОВАНИЕ АР(3)_____________________");
         double[] arr0 = new double[6000];
         ArrayList<Double> arr = new ArrayList<>();
-        double[] beta = {0.0, 0.0, 0.4927, 0.37};
-        double[] a = {10.9829, 0.0, 0.0, 0.0};
+        double[] beta = {0.0, 0.48347,	0.35767,	0.02501};
+        double[] a = {10.97842, 0.0, 0.0, 0.0};
         double[] E = new double[6000];;
         Random r = new Random();
-        for (int i = 2; i < arr0.length; i++){
+        for (int i = 3; i < arr0.length; i++){
             E[i] = r.nextGaussian();
-            arr0[i] = beta[2] * arr0[i - 1] + beta[3] * arr0[i - 2] + a[0] * E[i] + (1 - (beta[2] + beta[3])) * M;
+            arr0[i] = beta[1] * arr0[i - 1] + beta[2] * arr0[i - 2] + beta[3] * arr0[i - 3] + a[0] * E[i] +
+                    (1 - (beta[1] + beta[2] + beta[3])) * M;
         }
         try {
-            FileWriter fileWriter = new FileWriter("AR2_MODEL.TXT", false);
+            FileWriter fileWriter = new FileWriter("AR3_MODEL.TXT", false);
             for (int i = 1000; i < arr0.length; i++){
                 arr.add(arr0[i]);
                 fileWriter.write(Double.toString(arr0[i]));
